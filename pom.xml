@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.microfocus.adm.almoctane.migration</groupId>
+    <artifactId>octane-test-importer</artifactId>
+    <version>1.0.0</version>
+
+    <name>ALM Octane Test Importer</name>
+    <description>Utility that can be used to import tests to Octane using the Octane test excel format</description>
+    <url>https://github.com/MicroFocus/octane-test-importer</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/MicroFocus/octane-test-importer</url>
+        <connection>scm:git:https://github.com/MicroFocus/octane-test-importer.git</connection>
+        <developerConnection>scm:git:ssh://github.com/MicroFocus/octane-test-importer.git</developerConnection>
+    </scm>
+
+    <organization>
+        <name>Micro Focus</name>
+        <url>http://www.microfocus.com</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Spencer Bruce</name>
+            <email>spencer.bruce@microfocus.com</email>
+            <organization>Micro Focus</organization>
+        </developer>
+    </developers>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <octane-sdk.version>12.60.41</octane-sdk.version>
+        <apache-commons-csv.version>1.7-SNAPSHOT</apache-commons-csv.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <org-json.version>20160212</org-json.version>
+        <apache-poi-ooxml.version>4.1.0</apache-poi-ooxml.version>
+        <junit.version>4.12</junit.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.microfocus.adm.almoctane.sdk</groupId>
+            <artifactId>sdk-src</artifactId>
+            <version>${octane-sdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>${apache-commons-csv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${org-json.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${apache-poi-ooxml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
